@@ -5,7 +5,6 @@ package pos.cefet.vma.view;
 
 import java.awt.event.ActionListener;
 
-import javax.swing.JFrame;
 import javax.swing.JInternalFrame;
 
 /**

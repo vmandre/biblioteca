@@ -4,7 +4,6 @@
  */
 package pos.cefet.vma.interfaces;
 
-import javax.swing.JButton;
 import javax.swing.JCheckBox;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;

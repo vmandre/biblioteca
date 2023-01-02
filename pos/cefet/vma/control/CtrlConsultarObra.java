@@ -11,14 +11,11 @@ import java.sql.SQLException;
 import javax.swing.JButton;
 import javax.swing.JInternalFrame;
 
-import pos.cefet.vma.model.Endereco;
 import pos.cefet.vma.model.Obra;
-import pos.cefet.vma.model.Usuario;
 import pos.cefet.vma.utility.BIBMessage;
 import pos.cefet.vma.view.IntBibliotecaria;
 import pos.cefet.vma.view.IntObraConsulta;
 import pos.cefet.vma.view.IntObraConsultaResultado;
-import pos.cefet.vma.view.IntUsuarioConsultaResultado;
 
 /**
  * @author Vanderlei Matos Andre
@@ -62,7 +59,7 @@ public class CtrlConsultarObra implements ActionListener {
 		ctrlBiblioteca.getContentPane().add(fResult).setVisible(true);		
 	}
 
-	/* (não-Javadoc)
+	/* (nï¿½o-Javadoc)
 	 * @see java.awt.event.ActionListener#actionPerformed(java.awt.event.ActionEvent)
 	 */
 	public void actionPerformed(ActionEvent e) {
@@ -73,7 +70,7 @@ public class CtrlConsultarObra implements ActionListener {
 				.getActionCommand()
 				.equals("Alterar")) {
 
-				//Recupera o valor da matrícula para realizar a pesquisa para a tela de alteração
+				//Recupera o valor da matrï¿½cula para realizar a pesquisa para a tela de alteraï¿½ï¿½o
 				codigo = obraConsultaResultado.getTxtCodigo().getText();
 
 				Obra obra = new Obra();
@@ -87,7 +84,7 @@ public class CtrlConsultarObra implements ActionListener {
 					BIBMessage.showError(
 						"Ocorreu erro na pesquisa da obra "
 							+ codigo
-							+ " para alteração!");
+							+ " para alteraï¿½ï¿½o!");
 				}
 
 			}
@@ -97,20 +94,20 @@ public class CtrlConsultarObra implements ActionListener {
 				.equals("Excluir")) {
 				int retorno = BIBMessage.showExcludeQuestion();
 
-				//Usuário selecionou exclusão
+				//Usuï¿½rio selecionou exclusï¿½o
 				if (retorno == 0) {
-					//Recupera o valor da matrícula para realizar a pesquisa para a tela de alteração
+					//Recupera o valor da matrï¿½cula para realizar a pesquisa para a tela de alteraï¿½ï¿½o
 					codigo =
 						obraConsultaResultado.getTxtCodigo().getText();
 					Obra obra = new Obra();
 					obra.setId(Integer.parseInt(codigo));
 
-					//Passa o usuário para o Control excluir
+					//Passa o usuï¿½rio para o Control excluir
 					CtrlExcluirObra ctrlExcluirObra =
 						new CtrlExcluirObra();
 					ctrlExcluirObra.excluirObra(obra);
 
-					BIBMessage.showInfo("Obra excluída com sucesso!");
+					BIBMessage.showInfo("Obra excluï¿½da com sucesso!");
 					this.obraConsulta.dispose();
 					this.obraConsultaResultado.dispose();
 					this.obraConsulta.repaint();
@@ -122,28 +119,28 @@ public class CtrlConsultarObra implements ActionListener {
 			if (((JButton) e.getSource())
 				.getActionCommand()
 				.equals("Consultar")) {
-				//Validação do preenchimento dos campos	
+				//Validaï¿½ï¿½o do preenchimento dos campos	
 				if (codigo.equals("")) {
 					//Dois campos preenchidos
 					BIBMessage.showError(
-						"Digite o código da obra para realizar a pesquisa!");
+						"Digite o cï¿½digo da obra para realizar a pesquisa!");
 				} else {
 					int idObra = 0;
 					if (codigo.length() > 0) {
 						try {
 							idObra = Integer.parseInt(codigo);
 						} catch (NumberFormatException nfe) {
-							BIBMessage.showError("Código inválido!");
+							BIBMessage.showError("Cï¿½digo invï¿½lido!");
 						}
 					}
 
 					Obra obra = new Obra();
 
-					//Pesquisa obra pelo código
+					//Pesquisa obra pelo cï¿½digo
 					if (idObra != 0) {
 						Obra obra2 = obra.getObraById(idObra);
 						if (obra2 == null) {
-							BIBMessage.showError("Obra não encontrada!");
+							BIBMessage.showError("Obra nï¿½o encontrada!");
 						} else {
 							obraConsultaResultado =
 								new IntObraConsultaResultado(this, obra2);

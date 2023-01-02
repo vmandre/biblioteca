@@ -11,7 +11,6 @@ import javax.swing.JButton;
 import javax.swing.JInternalFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
-import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 
 /**
@@ -34,7 +33,7 @@ public class IntObraConsulta extends JInternalFrame {
 	 * 
 	 */
 	public IntObraConsulta(ActionListener ctrlListener) {
-		super("Consulta de Usuário", false, true);
+		super("Consulta de Usuï¿½rio", false, true);
 		
 		this.ctrlListener = ctrlListener;
 		initialize();
@@ -90,7 +89,7 @@ public class IntObraConsulta extends JInternalFrame {
 		if(lblCodigo == null) {
 			lblCodigo = new JLabel();
 			lblCodigo.setSize(100, 20);
-			lblCodigo.setText("Código da Obra:");
+			lblCodigo.setText("Cï¿½digo da Obra:");
 			lblCodigo.setLocation(15, 15);
 		}
 		return lblCodigo;

@@ -4,20 +4,12 @@
  */
 package pos.cefet.vma.model;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.Statement;
-import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
-import java.util.GregorianCalendar;
 
-import javax.swing.JInternalFrame;
-
-import pos.cefet.vma.component.ConnectionFactory;
 import pos.cefet.vma.component.IntPostgreSQL;
 import pos.cefet.vma.constants.BIBConstants;
 import pos.cefet.vma.interfaces.InterfaceUsuario;
@@ -101,12 +93,12 @@ public class Usuario {
 		int id;
 		try {
 			id = Integer.parseInt(interfaceUsuario.getTxtMatricula().getText());
-		}catch(NumberFormatException nfe){return "Matrícula inválida!";}
+		}catch(NumberFormatException nfe){return "Matrï¿½cula invï¿½lida!";}
 
 		long cpf;
 		try {
 			cpf = Long.parseLong(interfaceUsuario.getTxtCPF().getText());
-		}catch(NumberFormatException nfe){return "CPF  inválido!";}
+		}catch(NumberFormatException nfe){return "CPF  invï¿½lido!";}
 		
 		String nome = interfaceUsuario.getTxtNome().getText();
 		if (nome.equals("")) return "O nome deve ser preenchido!";
@@ -117,10 +109,10 @@ public class Usuario {
 		if (senha2.equals("")) return "O campo confirmar senha deve ser preenchido!";
 
 		if (! senha1.equals(senha2))
-			return "Senhas não conferem!";
+			return "Senhas nï¿½o conferem!";
 		
 		if (interfaceUsuario.getTxtDataNasc().getText().equals("")) return "Data de nascimento deve ser preenchida!";
-		if (interfaceUsuario.getTxtDataNasc().getText().indexOf("/") == -1) return "Data com formato inválido! \nDeve ser preenchida no formato dd/mm/aaaa";
+		if (interfaceUsuario.getTxtDataNasc().getText().indexOf("/") == -1) return "Data com formato invï¿½lido! \nDeve ser preenchida no formato dd/mm/aaaa";
 		Calendar calendar = Calendar.getInstance();
 		String dia = "";
 		String mes = "";
@@ -130,7 +122,7 @@ public class Usuario {
 			mes = interfaceUsuario.getTxtDataNasc().getText().substring(3, 5);
 			ano = interfaceUsuario.getTxtDataNasc().getText().substring(6);
 		} catch (RuntimeException e) {
-			return "Data com formato inválido!";
+			return "Data com formato invï¿½lido!";
 		}
 		calendar.set(Calendar.DAY_OF_MONTH, Integer.parseInt(dia));
 		calendar.set(Calendar.MONTH, Integer.parseInt(mes)-1);
@@ -145,7 +137,7 @@ public class Usuario {
 		dataNasc.set(Calendar.SECOND, 0);
 		
 		Date dataAtual = Calendar.getInstance().getTime();		
-		if (dataAtual.before(calendar.getTime())) {return "Data de nascimento inválida!";}
+		if (dataAtual.before(calendar.getTime())) {return "Data de nascimento invï¿½lida!";}
 		
 		String logradouro = interfaceUsuario.getTxtLogradouro().getText();
 		int numero;
@@ -158,7 +150,7 @@ public class Usuario {
 		
 		String email = interfaceUsuario.getTxtEmail().getText();
 		if (email.indexOf('@') == -1 || email.indexOf('.') == -1) {
-			return "Formato do e-mail inválido!";
+			return "Formato do e-mail invï¿½lido!";
 		}
 		
 		String cidade = interfaceUsuario.getTxtCidade().getText();
@@ -170,35 +162,35 @@ public class Usuario {
 
 		try {
 			numCep = Integer.parseInt(cep);
-		}catch(NumberFormatException nfe){return "CEP inválido!";}
+		}catch(NumberFormatException nfe){return "CEP invï¿½lido!";}
 		
 		String ddd = interfaceUsuario.getTxtDDD().getText();
 		int numDDD;
 		if (ddd.equals("")) numDDD = 0;
 		try {
 			numDDD = Integer.parseInt(ddd);
-		}catch(NumberFormatException nfe){return "DDD inválido!";}
+		}catch(NumberFormatException nfe){return "DDD invï¿½lido!";}
 		
 		String telCont = interfaceUsuario.getTxtTelCont().getText();
 		int numTelCont;
 		if (telCont.equals("")) numTelCont = 0;
 		try {
 			numTelCont = Integer.parseInt(telCont);
-		}catch(NumberFormatException nfe){return "Telefone p/ contato inválido!";}
+		}catch(NumberFormatException nfe){return "Telefone p/ contato invï¿½lido!";}
 		
 		String telCel = interfaceUsuario.getTxtTelCel().getText();
 		int numTelCel;
 		if (telCel.equals("")) numTelCel = 0;
 		try {
 			numTelCel = Integer.parseInt(telCel);
-		}catch(NumberFormatException nfe){return "Telefone celular inválido!";}
+		}catch(NumberFormatException nfe){return "Telefone celular invï¿½lido!";}
 		
 		String telCom = interfaceUsuario.getTxtTelCom().getText();
 		int numTelCom;
 		if (telCom.equals("")) numTelCom = 0;
 		try {
 			numTelCom = Integer.parseInt(telCom);
-		}catch(NumberFormatException nfe){return "Telefone comercial inválido!";}
+		}catch(NumberFormatException nfe){return "Telefone comercial invï¿½lido!";}
 		
 		String status2;
 		if (interfaceUsuario.getJChkAtivo().isSelected()){
@@ -282,7 +274,7 @@ public class Usuario {
 	public void excluir() throws ClassNotFoundException, SQLException {
 		postgreSQL = new IntPostgreSQL();
 		
-		//Se existir um endereço cadastrado para o usuário, será excluído da Base de Dados.
+		//Se existir um endereï¿½o cadastrado para o usuï¿½rio, serï¿½ excluï¿½do da Base de Dados.
 //		Endereco endereco = new Endereco();
 //		if (endereco.getEnderecoByUsuario(this.getId()) != null) {
 //			endereco.setIdUsuario(this.getId());

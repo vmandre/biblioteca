@@ -9,13 +9,11 @@ import java.awt.event.ActionListener;
 import java.sql.SQLException;
 
 import javax.swing.JInternalFrame;
-import javax.swing.JOptionPane;
 
 import pos.cefet.vma.model.Usuario;
 import pos.cefet.vma.utility.BIBMessage;
 import pos.cefet.vma.view.IntBibliotecaria;
 import pos.cefet.vma.view.IntUsuarioAlteracao;
-import pos.cefet.vma.view.IntUsuarioInclusao;
 
 /**
  * @author Vanderlei Matos Andre
@@ -41,7 +39,7 @@ public class CtrlAlterarUsuario implements ActionListener {
 		return new IntBibliotecaria().mostrarJanela(alteracao);
 	}
 
-	/* (não-Javadoc)
+	/* (nï¿½o-Javadoc)
 	 * @see java.awt.event.ActionListener#actionPerformed(java.awt.event.ActionEvent)
 	 */
 	public void actionPerformed(ActionEvent e) {
@@ -56,7 +54,7 @@ public class CtrlAlterarUsuario implements ActionListener {
 			try {
 				usuarioAlteracao.alterar();
 				usuarioAlteracao.getEndereco().alterar();				
-				BIBMessage.showInfo("Usuário alterado com sucesso!");
+				BIBMessage.showInfo("Usuï¿½rio alterado com sucesso!");
 								
 			} catch (ClassNotFoundException e1) {
 				BIBMessage.showError(e1);

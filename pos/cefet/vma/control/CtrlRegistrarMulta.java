@@ -7,8 +7,6 @@ package pos.cefet.vma.control;
 import java.io.IOException;
 import java.sql.SQLException;
 
-import javax.swing.JOptionPane;
-
 import pos.cefet.vma.model.Emprestimo;
 import pos.cefet.vma.model.Multa;
 import pos.cefet.vma.model.Obra;
@@ -27,7 +25,7 @@ public class CtrlRegistrarMulta {
 	/**
 	 * 
 	 * @param emprestimo
-	 * @param diasAtraso Se a quantidade de dias de atraso for ZERO, será emitida a multa por extravio
+	 * @param diasAtraso Se a quantidade de dias de atraso for ZERO, serï¿½ emitida a multa por extravio
 	 * @return
 	 * @throws ClassNotFoundException
 	 * @throws SQLException

@@ -16,7 +16,6 @@ import javax.swing.JInternalFrame;
 import pos.cefet.vma.component.MultaArquivo;
 import pos.cefet.vma.component.MultaArquivoReciboPagamento;
 import pos.cefet.vma.constants.BIBConstants;
-import pos.cefet.vma.model.Emprestimo;
 import pos.cefet.vma.model.Multa;
 import pos.cefet.vma.model.Obra;
 import pos.cefet.vma.model.Usuario;
@@ -44,7 +43,7 @@ public class CtrlEmissaoMultas implements ActionListener {
 		return new IntBibliotecaria().mostrarJanela(multaConsulta);
 	}
 
-	/* (não-Javadoc)
+	/* (nï¿½o-Javadoc)
 	 * @see java.awt.event.ActionListener#actionPerformed(java.awt.event.ActionEvent)
 	 */
 	public void actionPerformed(ActionEvent e) {
@@ -58,17 +57,17 @@ public class CtrlEmissaoMultas implements ActionListener {
 				Usuario usuario = new Usuario();
 				Usuario usuario2 = usuario.getUsuarioById(idUser);
 				if (usuario2 == null) {
-					throw new SQLException("Usuário não cadastrado!");
+					throw new SQLException("Usuï¿½rio nï¿½o cadastrado!");
 				}
 							
 				Multa multas = new Multa();				
 				ArrayList arrayList = multas.getMultasByUsuario(idUser);
 				if (arrayList.size() == 0) { 
-					throw new SQLException("Não existe multas para este usuário!");
+					throw new SQLException("Nï¿½o existe multas para este usuï¿½rio!");
 				} else {
 					int qtdeMultas = arrayList.size();
-					//Aviso da quantidade de multas do usuário
-					BIBMessage.showWarning("Serão emitidas " + qtdeMultas + " multas pendentes para este usuário!");
+					//Aviso da quantidade de multas do usuï¿½rio
+					BIBMessage.showWarning("Serï¿½o emitidas " + qtdeMultas + " multas pendentes para este usuï¿½rio!");
 					
 					for (int i = 0; i  < qtdeMultas; i++) {
 						
@@ -78,7 +77,7 @@ public class CtrlEmissaoMultas implements ActionListener {
 				}
 				
 			} catch (NumberFormatException e2) {
-				BIBMessage.showError("Matrícula inválida!");
+				BIBMessage.showError("Matrï¿½cula invï¿½lida!");
 			} catch (ClassNotFoundException e1) {
 				BIBMessage.showError(e1.getMessage());
 			} catch (SQLException e1) {
@@ -98,11 +97,11 @@ public class CtrlEmissaoMultas implements ActionListener {
 			Obra obra1 = new Obra();
 			Obra obra = obra1.getObraById(multa.getIdObra());
 						
-			//Busca informações do Usuario
+			//Busca informaï¿½ï¿½es do Usuario
 			Usuario usuario1 = new Usuario();
 			Usuario usuario2 = usuario1.getUsuarioById(multa.getIdUsuario());
 								
-			//Seta os parâmetros para a impressão da multa
+			//Seta os parï¿½metros para a impressï¿½o da multa
 			multaArquivo.getJLblIdMulta().setText(""+multa.getIdMulta());
 			multaArquivo.getJLblDataHoraEmissao().setText(dateFormat.format(dataHoraEmissao.getTime()).trim());
 			multaArquivo.getJLblNomeUsuario().setText(usuario2.getId() + " - " + usuario2.getNome().trim());
@@ -133,11 +132,11 @@ public class CtrlEmissaoMultas implements ActionListener {
 			Obra obra1 = new Obra();
 			Obra obra = obra1.getObraById(multa.getIdObra());
 							
-			//Busca informações do Usuario
+			//Busca informaï¿½ï¿½es do Usuario
 			Usuario usuario1 = new Usuario();
 			Usuario usuario2 = usuario1.getUsuarioById(multa.getIdUsuario());
 									
-			//Seta os parâmetros para a impressão da multa
+			//Seta os parï¿½metros para a impressï¿½o da multa
 			multaArquivoRecibo.getJLblIdMulta().setText(""+multa.getIdMulta());
 			//multaArquivo.getJLblDataHoraEmissao().setText(dateFormat.format(dataHoraEmissao.getTime()).trim());
 			multaArquivoRecibo.getJLblDataHoraEmissao().setText(dateFormat.format(dataHoraEmissao.getTime()).trim());

@@ -7,7 +7,6 @@ package pos.cefet.vma.control;
 import java.sql.SQLException;
 
 import pos.cefet.vma.model.Emprestimo;
-import pos.cefet.vma.model.Endereco;
 import pos.cefet.vma.model.Multa;
 import pos.cefet.vma.model.Usuario;
 
@@ -19,25 +18,25 @@ public class CtrlExcluirUsuario {
 	
 	public void excluirUsuario(Usuario usuario) throws ClassNotFoundException, SQLException {
 
-		//Valida se o usuário não tem obra emprestrada para que possa ser excluido
+		//Valida se o usuï¿½rio nï¿½o tem obra emprestrada para que possa ser excluido
 		Emprestimo emprestimo = new Emprestimo();
 		Multa multa = new Multa();
 
 		if (usuario.getStatus().equals("I"))
-			throw new SQLException("Usuário já está desativado!");
+			throw new SQLException("Usuï¿½rio jï¿½ estï¿½ desativado!");
 
 		if (emprestimo.getEmprestimosAbertoByUsuario(usuario.getId()).size() == 0) {
 			
 			if (multa.getMultasByUsuario(usuario.getId()).size() > 0) {
-				throw new SQLException("Usuário possui multa(s) pendente(s). Não é possível desativá-lo!");	
+				throw new SQLException("Usuï¿½rio possui multa(s) pendente(s). Nï¿½o ï¿½ possï¿½vel desativï¿½-lo!");	
 			} else {
-				//Desativar o usuário
+				//Desativar o usuï¿½rio
 				//usuario.excluir();
 				usuario.desativar();
 			}
 
 		} else {
-			throw new SQLException("Usuário possui obras emprestadas. Não é possível desativá-lo!");
+			throw new SQLException("Usuï¿½rio possui obras emprestadas. Nï¿½o ï¿½ possï¿½vel desativï¿½-lo!");
 		}
 	}
 }

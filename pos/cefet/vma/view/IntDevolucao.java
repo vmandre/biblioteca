@@ -4,14 +4,12 @@
 package pos.cefet.vma.view;
 
 import java.awt.Color;
-import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
 import javax.swing.BorderFactory;
 import javax.swing.JButton;
-import javax.swing.JComboBox;
 import javax.swing.JInternalFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -40,7 +38,7 @@ public class IntDevolucao extends JInternalFrame {
 	 * 
 	 */
 	public IntDevolucao(ActionListener ctrlListener) {
-		super("Devolução de Obra", false, true);
+		super("Devoluï¿½ï¿½o de Obra", false, true);
 		
 		this.ctrlListener = ctrlListener;
 		initialize();
@@ -98,7 +96,7 @@ public class IntDevolucao extends JInternalFrame {
 		if(lblCodigo == null) {
 			lblCodigo = new JLabel();
 			lblCodigo.setSize(100, 20);
-			lblCodigo.setText("Código da Obra :");
+			lblCodigo.setText("Cï¿½digo da Obra :");
 			lblCodigo.setLocation(15, 15);
 		}
 		return lblCodigo;
@@ -112,7 +110,7 @@ public class IntDevolucao extends JInternalFrame {
 		if(lblDtEmprestimo == null) {
 			lblDtEmprestimo = new JLabel();
 			lblDtEmprestimo.setSize(129, 20);
-			lblDtEmprestimo.setText("Data do Devolução :");
+			lblDtEmprestimo.setText("Data do Devoluï¿½ï¿½o :");
 			lblDtEmprestimo.setLocation(324, 15);
 		}
 		return lblDtEmprestimo;
@@ -159,7 +157,7 @@ public class IntDevolucao extends JInternalFrame {
 		if(btDevolver == null) {
 			btDevolver = new JButton();
 			btDevolver.setBounds(244, 88, 155, 36);
-			btDevolver.setText("Registrar Devolução");
+			btDevolver.setText("Registrar Devoluï¿½ï¿½o");
 			btDevolver.addActionListener(ctrlListener);
 		}
 		return btDevolver;

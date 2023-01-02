@@ -8,18 +8,14 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.IOException;
 import java.sql.SQLException;
-import java.text.SimpleDateFormat;
 
 import javax.swing.JInternalFrame;
 
-import pos.cefet.vma.component.MultaArquivo;
 import pos.cefet.vma.constants.BIBConstants;
 import pos.cefet.vma.model.Emprestimo;
 import pos.cefet.vma.model.Multa;
 import pos.cefet.vma.model.Obra;
-import pos.cefet.vma.model.Usuario;
 import pos.cefet.vma.utility.BIBMessage;
-import pos.cefet.vma.utility.BIBUtility;
 import pos.cefet.vma.view.IntBibliotecaria;
 import pos.cefet.vma.view.IntObraAlteracao;
 
@@ -47,7 +43,7 @@ public class CtrlAlterarObra implements ActionListener {
 		return new IntBibliotecaria().mostrarJanela(alteracao);
 	}
 
-	/* (não-Javadoc)
+	/* (nï¿½o-Javadoc)
 	 * @see java.awt.event.ActionListener#actionPerformed(java.awt.event.ActionEvent)
 	 */
 	public void actionPerformed(ActionEvent e) {
@@ -56,7 +52,7 @@ public class CtrlAlterarObra implements ActionListener {
 
 			if (obra.getDataDesativacao() != null) {
 				BIBMessage.showError(
-					"Esta obra já está desativada e não pode ser alterada!");
+					"Esta obra jï¿½ estï¿½ desativada e nï¿½o pode ser alterada!");
 			} else {
 				Object object = Obra.validarDadosObra(alteracao);
 				if (object instanceof String) {
@@ -66,7 +62,7 @@ public class CtrlAlterarObra implements ActionListener {
 				} else {
 					Obra obraAlteracao = (Obra) object;
 
-					//Recupera os valores selecionados pelo usuário na tela
+					//Recupera os valores selecionados pelo usuï¿½rio na tela
 					obraAlteracao.setMotivoDesativacao(
 						this.alteracao.getJCboDesativavao().getSelectedIndex());
 					obraAlteracao.setGenero(
@@ -74,10 +70,10 @@ public class CtrlAlterarObra implements ActionListener {
 
 					try {
 
-						//Se o motivo da desativação da obra for Extravio, será gerada a multa para o usuário
+						//Se o motivo da desativaï¿½ï¿½o da obra for Extravio, serï¿½ gerada a multa para o usuï¿½rio
 						if (obraAlteracao.getMotivoDesativacao() == BIBConstants.CODIGO_EXTRAVIO) {
 							BIBMessage.showWarning(
-								"A desativação desta obra por Extravio irá gerar a multa para o usuário \n" +								"que a emprestou caso haja um empréstimo registrado para a obra!");							 
+								"A desativaï¿½ï¿½o desta obra por Extravio irï¿½ gerar a multa para o usuï¿½rio \n" +								"que a emprestou caso haja um emprï¿½stimo registrado para a obra!");							 
 
 							Emprestimo emprestimo = new Emprestimo();
 							Emprestimo emprestimo2 = emprestimo.getEmprestimoAberto(obraAlteracao.getId());

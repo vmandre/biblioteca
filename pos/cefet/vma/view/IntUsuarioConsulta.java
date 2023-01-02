@@ -11,7 +11,6 @@ import javax.swing.JButton;
 import javax.swing.JInternalFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
-import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 
 /**
@@ -36,7 +35,7 @@ public class IntUsuarioConsulta extends JInternalFrame {
 	 * 
 	 */
 	public IntUsuarioConsulta(ActionListener ctrlListener) {
-		super("Consulta de Usuário", false, true);
+		super("Consulta de Usuï¿½rio", false, true);
 		
 		this.ctrlListener = ctrlListener;
 		initialize();

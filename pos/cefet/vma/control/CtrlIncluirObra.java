@@ -8,7 +8,6 @@ import java.awt.event.ActionListener;
 import java.sql.SQLException;
 
 import javax.swing.JInternalFrame;
-import javax.swing.JOptionPane;
 
 import pos.cefet.vma.model.Obra;
 import pos.cefet.vma.utility.BIBMessage;
@@ -27,7 +26,7 @@ public class CtrlIncluirObra implements ActionListener {
 		return new IntBibliotecaria().mostrarJanela(inclusao);
 	}
 
-	/* (não-Javadoc)
+	/* (nï¿½o-Javadoc)
 	 * @see java.awt.event.ActionListener#actionPerformed(java.awt.event.ActionEvent)
 	 */
 	public void actionPerformed(ActionEvent e) {

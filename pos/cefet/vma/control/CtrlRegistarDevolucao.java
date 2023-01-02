@@ -7,21 +7,15 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.IOException;
 import java.sql.SQLException;
-import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
-import javax.swing.JButton;
 import javax.swing.JInternalFrame;
-import javax.swing.JOptionPane;
 
-import pos.cefet.vma.component.MultaArquivo;
 import pos.cefet.vma.constants.BIBConstants;
 import pos.cefet.vma.model.Emprestimo;
 import pos.cefet.vma.model.Multa;
 import pos.cefet.vma.model.Obra;
-import pos.cefet.vma.model.Usuario;
 import pos.cefet.vma.utility.BIBMessage;
-import pos.cefet.vma.utility.BIBUtility;
 import pos.cefet.vma.view.IntBibliotecaria;
 import pos.cefet.vma.view.IntDevolucao;
 
@@ -37,7 +31,7 @@ public class CtrlRegistarDevolucao implements ActionListener {
 		return new IntBibliotecaria().mostrarJanela(devolucao);
 	}
 	
-	/* (não-Javadoc)
+	/* (nï¿½o-Javadoc)
 	 * @see java.awt.event.ActionListener#actionPerformed(java.awt.event.ActionEvent)
 	 */
 	public void actionPerformed(ActionEvent e) {
@@ -47,14 +41,14 @@ public class CtrlRegistarDevolucao implements ActionListener {
 			
 			Obra obra = new Obra();
 			if (obra.getObraById(Integer.parseInt(this.devolucao.getTxtCodigo().getText())) == null) {
-				BIBMessage.showError("Obra não cadastrada!");
+				BIBMessage.showError("Obra nï¿½o cadastrada!");
 			} else {
 				Emprestimo emprestimo2 =
 					emprestimo.getEmprestimoAberto(
 						Integer.parseInt(
 							this.devolucao.getTxtCodigo().getText()));
 				if (emprestimo2 == null) {
-					BIBMessage.showError("Obra não está emprestrada!");
+					BIBMessage.showError("Obra nï¿½o estï¿½ emprestrada!");
 				} else {
 					/*
 					 * Verifica os emprestimos que estao em aberto e a data de 
@@ -64,21 +58,21 @@ public class CtrlRegistarDevolucao implements ActionListener {
 					Calendar dataLimiteDevolucao = Calendar.getInstance();
 					dataLimiteDevolucao.setTime(emprestimo2.getDtEmprestimo());
 					dataLimiteDevolucao.set(Calendar.DAY_OF_MONTH, 
-						dataLimiteDevolucao.get(Calendar.DAY_OF_MONTH) + BIBConstants.LIMITE_DIAS_EMPRESTIMO); //Acrescenta os dias de limite de emprestimo à data do emprestimo para comparar com a data da devolução
+						dataLimiteDevolucao.get(Calendar.DAY_OF_MONTH) + BIBConstants.LIMITE_DIAS_EMPRESTIMO); //Acrescenta os dias de limite de emprestimo ï¿½ data do emprestimo para comparar com a data da devoluï¿½ï¿½o
 					
 					Calendar dataAtual = Calendar.getInstance();
 					dataAtual.set(Calendar.DAY_OF_MONTH, 
-						dataAtual.get(Calendar.DAY_OF_MONTH) + 1); // Conta um dia a mais para registrar a multa. O usuario pode devolver o livro até o fechamento da biblioteca no dia do vencimento
+						dataAtual.get(Calendar.DAY_OF_MONTH) + 1); // Conta um dia a mais para registrar a multa. O usuario pode devolver o livro atï¿½ o fechamento da biblioteca no dia do vencimento
 
-					//Verifica se a devolução da obra está atrasada
+					//Verifica se a devoluï¿½ï¿½o da obra estï¿½ atrasada
 					if (dataAtual.after(dataLimiteDevolucao)) {
 						int diasDeAtraso = (dataAtual.get(Calendar.DAY_OF_MONTH) 
 							- dataLimiteDevolucao.get(Calendar.DAY_OF_MONTH)) - 1;
 
 						BIBMessage.showWarning(
-							"A devolução desta obra está  "
+							"A devoluï¿½ï¿½o desta obra estï¿½  "
 								+ diasDeAtraso
-								+ "  dia(s) atrasado(s)!\nSerá gerada a multa referente aos dias atrasados!");
+								+ "  dia(s) atrasado(s)!\nSerï¿½ gerada a multa referente aos dias atrasados!");
 							 
 
 						CtrlRegistrarMulta ctrlRegistrarMulta = new CtrlRegistrarMulta();
@@ -95,14 +89,14 @@ public class CtrlRegistarDevolucao implements ActionListener {
 						}
 					}
 					
-					//Registra a devolução da obra
+					//Registra a devoluï¿½ï¿½o da obra
 					emprestimo2.registrarDevolucao();
-					BIBMessage.showInfo("Devolução efetuada com sucesso!");
+					BIBMessage.showInfo("Devoluï¿½ï¿½o efetuada com sucesso!");
 				}
 			}
 
 		} catch (NumberFormatException nfe){
-			BIBMessage.showError("O código da Obra é inválido!");
+			BIBMessage.showError("O cï¿½digo da Obra ï¿½ invï¿½lido!");
 		} catch (ClassNotFoundException e1) {
 			BIBMessage.showError(e1.getMessage());
 		} catch (SQLException e2) {

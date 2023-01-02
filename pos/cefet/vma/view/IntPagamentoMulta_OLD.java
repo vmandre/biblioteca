@@ -4,14 +4,12 @@
 package pos.cefet.vma.view;
 
 import java.awt.Color;
-import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
 import javax.swing.BorderFactory;
 import javax.swing.JButton;
-import javax.swing.JComboBox;
 import javax.swing.JInternalFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -105,7 +103,7 @@ public class IntPagamentoMulta_OLD extends JInternalFrame {
 		if(lblCodigo == null) {
 			lblCodigo = new JLabel();
 			lblCodigo.setSize(100, 20);
-			lblCodigo.setText("Código da Obra :");
+			lblCodigo.setText("Cï¿½digo da Obra :");
 			lblCodigo.setLocation(15, 106);
 		}
 		return lblCodigo;
@@ -119,7 +117,7 @@ public class IntPagamentoMulta_OLD extends JInternalFrame {
 		if(lblMatricula == null) {
 			lblMatricula = new JLabel();
 			lblMatricula.setSize(100, 20);
-			lblMatricula.setText("Matr. do Usuário :");
+			lblMatricula.setText("Matr. do Usuï¿½rio :");
 			lblMatricula.setLocation(15, 75);
 		}
 		return lblMatricula;

@@ -10,10 +10,7 @@ import java.sql.SQLException;
 
 import javax.swing.JInternalFrame;
 
-import pos.cefet.vma.component.MultaArquivoReciboPagamento;
 import pos.cefet.vma.model.Multa;
-import pos.cefet.vma.model.Obra;
-import pos.cefet.vma.model.Usuario;
 import pos.cefet.vma.utility.BIBMessage;
 import pos.cefet.vma.view.IntBibliotecaria;
 import pos.cefet.vma.view.IntPagamentoMulta;
@@ -36,7 +33,7 @@ public class CtrlRegistrarPagamento implements ActionListener {
 		return new IntBibliotecaria().mostrarJanela(multaPagamento);
 	}
 
-	/* (não-Javadoc)
+	/* (nï¿½o-Javadoc)
 	 * @see java.awt.event.ActionListener#actionPerformed(java.awt.event.ActionEvent)
 	 */
 	public void actionPerformed(ActionEvent e) {
@@ -45,7 +42,7 @@ public class CtrlRegistrarPagamento implements ActionListener {
 			long idMulta = 0;
 			try {
 				idMulta = Long.parseLong(this.multaPagamento.getJTxtIdMulta().getText());
-			}catch(NumberFormatException nfe){BIBMessage.showError("ID inválido!");}
+			}catch(NumberFormatException nfe){BIBMessage.showError("ID invï¿½lido!");}
 						
 			if (idMulta != 0) {
 				try {
@@ -54,7 +51,7 @@ public class CtrlRegistrarPagamento implements ActionListener {
 					Multa multa2 = multa.getMultaById(idMulta);
 					
 					if (multa2 == null) {
-						throw new SQLException("O ID não foi encontrado!\nVerifique se digitou corretamente!");
+						throw new SQLException("O ID nï¿½o foi encontrado!\nVerifique se digitou corretamente!");
 					} else {
 						multa2.registrarPagamento();
 						BIBMessage.showInfo(

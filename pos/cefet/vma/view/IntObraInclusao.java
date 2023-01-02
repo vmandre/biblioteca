@@ -4,7 +4,6 @@
 package pos.cefet.vma.view;
 
 import java.awt.Color;
-import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -57,7 +56,7 @@ public class IntObraInclusao extends JInternalFrame implements InterfaceObra {
 	 * 
 	 */
 	public IntObraInclusao(ActionListener ctrlListener) {
-		super("Inclusão de Obra", false, true);
+		super("Inclusï¿½o de Obra", false, true);
 		
 		this.ctrlListener = ctrlListener;
 		initialize();
@@ -131,7 +130,7 @@ public class IntObraInclusao extends JInternalFrame implements InterfaceObra {
 		if(lblMatricula == null) {
 			lblMatricula = new JLabel();
 			lblMatricula.setSize(100, 20);
-			lblMatricula.setText("Código :");
+			lblMatricula.setText("Cï¿½digo :");
 			lblMatricula.setLocation(15, 15);
 		}
 		return lblMatricula;
@@ -145,7 +144,7 @@ public class IntObraInclusao extends JInternalFrame implements InterfaceObra {
 		if(lblNome == null) {
 			lblNome = new JLabel();
 			lblNome.setSize(100, 20);
-			lblNome.setText("Descrição :");
+			lblNome.setText("Descriï¿½ï¿½o :");
 			lblNome.setLocation(15, 46);
 		}
 		return lblNome;
@@ -201,7 +200,7 @@ public class IntObraInclusao extends JInternalFrame implements InterfaceObra {
 		if(lblNumero == null) {
 			lblNumero = new JLabel();
 			lblNumero.setSize(103, 20);
-			lblNumero.setText("Data Publicação :");
+			lblNumero.setText("Data Publicaï¿½ï¿½o :");
 			lblNumero.setLocation(400, 143);
 		}
 		return lblNumero;
@@ -215,7 +214,7 @@ public class IntObraInclusao extends JInternalFrame implements InterfaceObra {
 		if(lblBairro == null) {
 			lblBairro = new JLabel();
 			lblBairro.setSize(141, 20);
-			lblBairro.setText("Data Ativação da Obra :");
+			lblBairro.setText("Data Ativaï¿½ï¿½o da Obra :");
 			lblBairro.setLocation(15, 178);
 		}
 		return lblBairro;
@@ -229,7 +228,7 @@ public class IntObraInclusao extends JInternalFrame implements InterfaceObra {
 		if(lblComplemento == null) {
 			lblComplemento = new JLabel();
 			lblComplemento.setSize(158, 20);
-			lblComplemento.setText("Data Desativação da Obra :");
+			lblComplemento.setText("Data Desativaï¿½ï¿½o da Obra :");
 			lblComplemento.setLocation(345, 178);
 		}
 		return lblComplemento;
@@ -243,7 +242,7 @@ public class IntObraInclusao extends JInternalFrame implements InterfaceObra {
 		if(lblEmail == null) {
 			lblEmail = new JLabel();
 			lblEmail.setSize(134, 20);
-			lblEmail.setText("Motivo da desativação :");
+			lblEmail.setText("Motivo da desativaï¿½ï¿½o :");
 			lblEmail.setLocation(15, 215);
 		}
 		return lblEmail;

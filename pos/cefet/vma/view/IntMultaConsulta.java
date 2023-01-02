@@ -11,7 +11,6 @@ import javax.swing.JButton;
 import javax.swing.JInternalFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
-import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 
 /**
@@ -34,7 +33,7 @@ public class IntMultaConsulta extends JInternalFrame {
 	 * 
 	 */
 	public IntMultaConsulta(ActionListener ctrlListener) {
-		super("Emissão de Multas por Usuário", false, true);
+		super("Emissï¿½o de Multas por Usuï¿½rio", false, true);
 		
 		this.ctrlListener = ctrlListener;
 		initialize();
@@ -90,7 +89,7 @@ public class IntMultaConsulta extends JInternalFrame {
 		if(lblMatricula == null) {
 			lblMatricula = new JLabel();
 			lblMatricula.setSize(126, 20);
-			lblMatricula.setText("Matrícula do Usuário : ");
+			lblMatricula.setText("Matrï¿½cula do Usuï¿½rio : ");
 			lblMatricula.setLocation(15, 15);
 		}
 		return lblMatricula;
