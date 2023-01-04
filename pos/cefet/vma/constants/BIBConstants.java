@@ -21,15 +21,15 @@ public interface BIBConstants {
 	
 	public static final String LOGO_BIB = "Biblioteca Central";
 	
-	public static final String MSG_ATRASO = "Referente ‡ entrega com atraso de XX dia(s).";
+	public static final String MSG_ATRASO = "Referente √† entrega com atraso de XX dia(s).";
 	public static final String MSG_EXTRAVIO = "Referente ao extravio da obra citada acima.";
 	
-	public static final String MSG_TEXTO_1 = "O usu·rio poder· emprestar obras da Biblioteca apÛs o pagamento da multa.";
-	public static final String MSG_TEXTO_2 = "O pagamento dever· efetuado somente na bilioteca.";
+	public static final String MSG_TEXTO_1 = "O usu√°rio poder√° emprestar obras da Biblioteca ap√≥s o pagamento da multa.";
+	public static final String MSG_TEXTO_2 = "O pagamento dever√° efetuado somente na bilioteca.";
 	
 	
 	public static Object[] ITENS_MOTIVO = {"", "Extravio", "Danificada"};
 	
-	public static Object[] ITENS_GENERO = {"", "Romance", "ComÈdia", "Suspense", "Literatura", "CientÌfica"};
+	public static Object[] ITENS_GENERO = {"", "Romance", "Com√©dia", "Suspense", "Literatura", "Cient√≠fica"};
 
 }

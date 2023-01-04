@@ -26,7 +26,7 @@ public class CtrlIncluirObra implements ActionListener {
 		return new IntBibliotecaria().mostrarJanela(inclusao);
 	}
 
-	/* (n�o-Javadoc)
+	/* (não-Javadoc)
 	 * @see java.awt.event.ActionListener#actionPerformed(java.awt.event.ActionEvent)
 	 */
 	public void actionPerformed(ActionEvent e) {

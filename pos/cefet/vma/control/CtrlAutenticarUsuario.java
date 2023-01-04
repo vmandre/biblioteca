@@ -26,7 +26,7 @@ public class CtrlAutenticarUsuario implements ActionListener {
 	private JInternalFrame frmAutenticacao;
 	
 	public CtrlAutenticarUsuario() {
-		intUsuario = new IntUsuario("AutenticaÁ„o do Usuario", false, true, this);		
+		intUsuario = new IntUsuario("Autentica√ß√£o do Usuario", false, true, this);		
 		usuario = new Usuario();
 		
 		frmAutenticacao = intUsuario.mostrarJanelaAutenticacao();
@@ -61,7 +61,7 @@ public class CtrlAutenticarUsuario implements ActionListener {
 		this.usuario = usuario;
 	}
 
-	/* (n„o-Javadoc)
+	/* (n√£o-Javadoc)
 	 * @see java.awt.event.ActionListener#actionPerformed(java.awt.event.ActionEvent)
 	 */
 	public void actionPerformed(ActionEvent e) {
@@ -77,11 +77,11 @@ public class CtrlAutenticarUsuario implements ActionListener {
 					Usuario userLogado = this.getUsuario().getUsuarioByIdAndPwd(id, pwd);
 					
 					if (userLogado == null) {
-						BIBMessage.showError("Usuario n„o autenticado!");
+						BIBMessage.showError("Usuario n√£o autenticado!");
 					}
 						
 				} catch (NumberFormatException e1) {
-					BIBMessage.showError("Usuario inv·lido!");
+					BIBMessage.showError("Usuario inv√£lido!");
 				} catch (ClassNotFoundException e2) {					
 					BIBMessage.showError(e2);
 				} catch (SQLException e3) {

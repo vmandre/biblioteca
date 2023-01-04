@@ -47,7 +47,7 @@ public class BIBMessage {
 	public static int showDesativationQuestion() {
 		return JOptionPane.showConfirmDialog(
 			null,
-			"Deseja realmente desativar o usu·rio?",
+			"Deseja realmente desativar o usu√°rio?",
 			"DESATIVAR",
 			JOptionPane.YES_NO_OPTION); 
 	}

@@ -214,13 +214,13 @@ public class Obra {
 		int id;
 		try {
 			id = Integer.parseInt(codigo);
-		} catch(NumberFormatException nfe){ return "CÛdigo inv·lido!"; }
+		} catch(NumberFormatException nfe){ return "C√≥digo inv√°lido!"; }
 		
 		String descricao = interfaceObra.getTxtDesricao().getText();
-		if (descricao.equals("")) return "A descriÁ„o da obra deve ser preenchida!";
+		if (descricao.equals("")) return "A descri√ß√£o da obra deve ser preenchida!";
 		
 		int generoSelecionado = interfaceObra.getJCboGenero().getSelectedIndex();
-		if (generoSelecionado == 0) return "Selecione um gÍnero para a obra!";
+		if (generoSelecionado == 0) return "Selecione um g√©nero para a obra!";
 		
 		String autor = interfaceObra.getTxtAutor().getText();
 		if (autor.equals("")) return "O campo Autor deve ser preenchido!";
@@ -229,7 +229,7 @@ public class Obra {
 		if (editora.equals("")) return "O campo Editora deve ser preenchido!";
 		
 		String dtPub = interfaceObra.getTxtDataPublicacao().getText();
-		if (dtPub.equals("")) return "O campo Data PublicaÁ„o deve ser preenchido!";
+		if (dtPub.equals("")) return "O campo Data Publica√ß√£o deve ser preenchido!";
 		
 		String dia = interfaceObra.getTxtDataPublicacao().getText().substring(0, 2);
 		String mes = interfaceObra.getTxtDataPublicacao().getText().substring(3, 5);
@@ -247,14 +247,14 @@ public class Obra {
 		dataAtual.set(Calendar.MINUTE, 0);
 		dataAtual.set(Calendar.SECOND, 0);
 				
-		if (dataAtual.getTime().before(dataPublicacao.getTime())) {return "Data de publicaÁ„o inv·lida!";}
+		if (dataAtual.getTime().before(dataPublicacao.getTime())) {return "Data de publica√ß√£o inv√°lida!";}
 		
 		String valor = interfaceObra.getTxtValor().getText();
 		double valorObra;
 		try {
 			valorObra = Double.parseDouble(valor);
 		} catch (NumberFormatException e) {
-			return "Valor inv·lido. Se o valor tiver vÌrgula, substitua por ponto (.)!";
+			return "Valor inv√°lido. Se o valor tiver v√≠rgula, substitua por ponto (.)!";
 		}
 
 		return new Obra(id, descricao, generoSelecionado, autor, editora, dataPublicacao.getTime(), dataAtual.getTime(), null, 0, valorObra);
@@ -301,7 +301,7 @@ public class Obra {
 		sql.append("'");
 		sql.append(", ");
 		sql.append("'");
-		sql.append(dateFormat.format(Calendar.getInstance().getTime())); //Data e hora da ativaÁ„o
+		sql.append(dateFormat.format(Calendar.getInstance().getTime())); //Data e hora da ativa√ß√£o
 		sql.append("'");
 		sql.append(", ");
 		sql.append(this.getValor());
@@ -376,7 +376,7 @@ public class Obra {
 		sql.append(this.getId());
 		
 		//postgreSQL.update(sql.toString());
-		throw new SQLException("Por questıes de auditoria, apenas ser· possÌvel desabilitar a obra para emprÈstimo!");
+		throw new SQLException("Por quest√µes de auditoria, apenas ser√° poss√≠vel desabilitar a obra para empr√©stimo!");
 	}
 
 	/**

@@ -79,7 +79,7 @@ public class IntUsuarioConsultaResultado extends JInternalFrame {
 	 * 
 	 */
 	public IntUsuarioConsultaResultado(ActionListener ctrlListener, Usuario usuario) {
-		super("Consulta de Usu·rio - Resultado", false, true);
+		super("Consulta de Usu√°rio - Resultado", false, true);
 		
 		this.ctrlListener = ctrlListener;
 		this.usuario = usuario;

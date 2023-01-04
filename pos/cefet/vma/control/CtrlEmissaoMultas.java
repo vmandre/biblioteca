@@ -43,7 +43,7 @@ public class CtrlEmissaoMultas implements ActionListener {
 		return new IntBibliotecaria().mostrarJanela(multaConsulta);
 	}
 
-	/* (n�o-Javadoc)
+	/* (não-Javadoc)
 	 * @see java.awt.event.ActionListener#actionPerformed(java.awt.event.ActionEvent)
 	 */
 	public void actionPerformed(ActionEvent e) {
@@ -57,17 +57,17 @@ public class CtrlEmissaoMultas implements ActionListener {
 				Usuario usuario = new Usuario();
 				Usuario usuario2 = usuario.getUsuarioById(idUser);
 				if (usuario2 == null) {
-					throw new SQLException("Usu�rio n�o cadastrado!");
+					throw new SQLException("Usuário não cadastrado!");
 				}
 							
 				Multa multas = new Multa();				
 				ArrayList arrayList = multas.getMultasByUsuario(idUser);
 				if (arrayList.size() == 0) { 
-					throw new SQLException("N�o existe multas para este usu�rio!");
+					throw new SQLException("Não existe multas para este usuário!");
 				} else {
 					int qtdeMultas = arrayList.size();
-					//Aviso da quantidade de multas do usu�rio
-					BIBMessage.showWarning("Ser�o emitidas " + qtdeMultas + " multas pendentes para este usu�rio!");
+					//Aviso da quantidade de multas do usuário
+					BIBMessage.showWarning("Serão emitidas " + qtdeMultas + " multas pendentes para este usuário!");
 					
 					for (int i = 0; i  < qtdeMultas; i++) {
 						
@@ -77,7 +77,7 @@ public class CtrlEmissaoMultas implements ActionListener {
 				}
 				
 			} catch (NumberFormatException e2) {
-				BIBMessage.showError("Matr�cula inv�lida!");
+				BIBMessage.showError("Matrícula inválida!");
 			} catch (ClassNotFoundException e1) {
 				BIBMessage.showError(e1.getMessage());
 			} catch (SQLException e1) {
@@ -97,11 +97,11 @@ public class CtrlEmissaoMultas implements ActionListener {
 			Obra obra1 = new Obra();
 			Obra obra = obra1.getObraById(multa.getIdObra());
 						
-			//Busca informa��es do Usuario
+			//Busca informações do Usuario
 			Usuario usuario1 = new Usuario();
 			Usuario usuario2 = usuario1.getUsuarioById(multa.getIdUsuario());
 								
-			//Seta os par�metros para a impress�o da multa
+			//Seta os parâmetros para a impressão da multa
 			multaArquivo.getJLblIdMulta().setText(""+multa.getIdMulta());
 			multaArquivo.getJLblDataHoraEmissao().setText(dateFormat.format(dataHoraEmissao.getTime()).trim());
 			multaArquivo.getJLblNomeUsuario().setText(usuario2.getId() + " - " + usuario2.getNome().trim());
@@ -132,11 +132,11 @@ public class CtrlEmissaoMultas implements ActionListener {
 			Obra obra1 = new Obra();
 			Obra obra = obra1.getObraById(multa.getIdObra());
 							
-			//Busca informa��es do Usuario
+			//Busca informações do Usuario
 			Usuario usuario1 = new Usuario();
 			Usuario usuario2 = usuario1.getUsuarioById(multa.getIdUsuario());
 									
-			//Seta os par�metros para a impress�o da multa
+			//Seta os parâmetros para a impressão da multa
 			multaArquivoRecibo.getJLblIdMulta().setText(""+multa.getIdMulta());
 			//multaArquivo.getJLblDataHoraEmissao().setText(dateFormat.format(dataHoraEmissao.getTime()).trim());
 			multaArquivoRecibo.getJLblDataHoraEmissao().setText(dateFormat.format(dataHoraEmissao.getTime()).trim());

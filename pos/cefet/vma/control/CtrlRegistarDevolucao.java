@@ -31,7 +31,7 @@ public class CtrlRegistarDevolucao implements ActionListener {
 		return new IntBibliotecaria().mostrarJanela(devolucao);
 	}
 	
-	/* (n�o-Javadoc)
+	/* (não-Javadoc)
 	 * @see java.awt.event.ActionListener#actionPerformed(java.awt.event.ActionEvent)
 	 */
 	public void actionPerformed(ActionEvent e) {
@@ -41,14 +41,14 @@ public class CtrlRegistarDevolucao implements ActionListener {
 			
 			Obra obra = new Obra();
 			if (obra.getObraById(Integer.parseInt(this.devolucao.getTxtCodigo().getText())) == null) {
-				BIBMessage.showError("Obra n�o cadastrada!");
+				BIBMessage.showError("Obra não cadastrada!");
 			} else {
 				Emprestimo emprestimo2 =
 					emprestimo.getEmprestimoAberto(
 						Integer.parseInt(
 							this.devolucao.getTxtCodigo().getText()));
 				if (emprestimo2 == null) {
-					BIBMessage.showError("Obra n�o est� emprestrada!");
+					BIBMessage.showError("Obra não está emprestrada!");
 				} else {
 					/*
 					 * Verifica os emprestimos que estao em aberto e a data de 
@@ -58,21 +58,21 @@ public class CtrlRegistarDevolucao implements ActionListener {
 					Calendar dataLimiteDevolucao = Calendar.getInstance();
 					dataLimiteDevolucao.setTime(emprestimo2.getDtEmprestimo());
 					dataLimiteDevolucao.set(Calendar.DAY_OF_MONTH, 
-						dataLimiteDevolucao.get(Calendar.DAY_OF_MONTH) + BIBConstants.LIMITE_DIAS_EMPRESTIMO); //Acrescenta os dias de limite de emprestimo � data do emprestimo para comparar com a data da devolu��o
+						dataLimiteDevolucao.get(Calendar.DAY_OF_MONTH) + BIBConstants.LIMITE_DIAS_EMPRESTIMO); //Acrescenta os dias de limite de emprestimo à data do emprestimo para comparar com a data da devolução
 					
 					Calendar dataAtual = Calendar.getInstance();
 					dataAtual.set(Calendar.DAY_OF_MONTH, 
-						dataAtual.get(Calendar.DAY_OF_MONTH) + 1); // Conta um dia a mais para registrar a multa. O usuario pode devolver o livro at� o fechamento da biblioteca no dia do vencimento
+						dataAtual.get(Calendar.DAY_OF_MONTH) + 1); // Conta um dia a mais para registrar a multa. O usuario pode devolver o livro até o fechamento da biblioteca no dia do vencimento
 
-					//Verifica se a devolu��o da obra est� atrasada
+					//Verifica se a devolução da obra está atrasada
 					if (dataAtual.after(dataLimiteDevolucao)) {
 						int diasDeAtraso = (dataAtual.get(Calendar.DAY_OF_MONTH) 
 							- dataLimiteDevolucao.get(Calendar.DAY_OF_MONTH)) - 1;
 
 						BIBMessage.showWarning(
-							"A devolu��o desta obra est�  "
+							"A devolução desta obra está  "
 								+ diasDeAtraso
-								+ "  dia(s) atrasado(s)!\nSer� gerada a multa referente aos dias atrasados!");
+								+ "  dia(s) atrasado(s)!\nSerá gerada a multa referente aos dias atrasados!");
 							 
 
 						CtrlRegistrarMulta ctrlRegistrarMulta = new CtrlRegistrarMulta();
@@ -89,14 +89,14 @@ public class CtrlRegistarDevolucao implements ActionListener {
 						}
 					}
 					
-					//Registra a devolu��o da obra
+					//Registra a devolução da obra
 					emprestimo2.registrarDevolucao();
-					BIBMessage.showInfo("Devolu��o efetuada com sucesso!");
+					BIBMessage.showInfo("Devolução efetuada com sucesso!");
 				}
 			}
 
 		} catch (NumberFormatException nfe){
-			BIBMessage.showError("O c�digo da Obra � inv�lido!");
+			BIBMessage.showError("O código da Obra é inválido!");
 		} catch (ClassNotFoundException e1) {
 			BIBMessage.showError(e1.getMessage());
 		} catch (SQLException e2) {

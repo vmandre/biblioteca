@@ -33,7 +33,7 @@ public class IntMultaConsulta extends JInternalFrame {
 	 * 
 	 */
 	public IntMultaConsulta(ActionListener ctrlListener) {
-		super("Emiss�o de Multas por Usu�rio", false, true);
+		super("Emissão de Multas por Usuário", false, true);
 		
 		this.ctrlListener = ctrlListener;
 		initialize();
@@ -89,7 +89,7 @@ public class IntMultaConsulta extends JInternalFrame {
 		if(lblMatricula == null) {
 			lblMatricula = new JLabel();
 			lblMatricula.setSize(126, 20);
-			lblMatricula.setText("Matr�cula do Usu�rio : ");
+			lblMatricula.setText("Matrícula do Usuário : ");
 			lblMatricula.setLocation(15, 15);
 		}
 		return lblMatricula;

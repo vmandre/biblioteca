@@ -33,7 +33,7 @@ public class BIBCreateTables {
 			}
 			
 		} catch (FileNotFoundException e) {
-			BIBMessage.showError("Arquivo utilizado para o insert n�o foi encontrado!");
+			BIBMessage.showError("Arquivo utilizado para o insert não foi encontrado!");
 		} catch (IOException e) {
 			BIBMessage.showError("Ocorreu um erro de leitura no Arquivo!");
 		} catch (ClassNotFoundException e) {

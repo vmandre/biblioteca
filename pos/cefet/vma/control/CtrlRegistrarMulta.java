@@ -25,7 +25,7 @@ public class CtrlRegistrarMulta {
 	/**
 	 * 
 	 * @param emprestimo
-	 * @param diasAtraso Se a quantidade de dias de atraso for ZERO, ser� emitida a multa por extravio
+	 * @param diasAtraso Se a quantidade de dias de atraso for ZERO, será emitida a multa por extravio
 	 * @return
 	 * @throws ClassNotFoundException
 	 * @throws SQLException

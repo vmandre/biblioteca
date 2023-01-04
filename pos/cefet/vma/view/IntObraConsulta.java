@@ -33,7 +33,7 @@ public class IntObraConsulta extends JInternalFrame {
 	 * 
 	 */
 	public IntObraConsulta(ActionListener ctrlListener) {
-		super("Consulta de Usu�rio", false, true);
+		super("Consulta de Usuário", false, true);
 		
 		this.ctrlListener = ctrlListener;
 		initialize();
@@ -89,7 +89,7 @@ public class IntObraConsulta extends JInternalFrame {
 		if(lblCodigo == null) {
 			lblCodigo = new JLabel();
 			lblCodigo.setSize(100, 20);
-			lblCodigo.setText("C�digo da Obra:");
+			lblCodigo.setText("Código da Obra:");
 			lblCodigo.setLocation(15, 15);
 		}
 		return lblCodigo;

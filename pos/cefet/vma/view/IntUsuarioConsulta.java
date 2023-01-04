@@ -35,7 +35,7 @@ public class IntUsuarioConsulta extends JInternalFrame {
 	 * 
 	 */
 	public IntUsuarioConsulta(ActionListener ctrlListener) {
-		super("Consulta de Usu�rio", false, true);
+		super("Consulta de Usuário", false, true);
 		
 		this.ctrlListener = ctrlListener;
 		initialize();

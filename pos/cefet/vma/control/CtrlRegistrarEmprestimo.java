@@ -21,7 +21,7 @@ public class CtrlRegistrarEmprestimo implements ActionListener {
 		emprestimo.registrarEmprestimo();
 	}
 
-	/* (n„o-Javadoc)
+	/* (n√£o-Javadoc)
 	 * @see java.awt.event.ActionListener#actionPerformed(java.awt.event.ActionEvent)
 	 */
 	public void actionPerformed(ActionEvent e) {

@@ -78,7 +78,7 @@ public class IntUsuarioAlteracao extends JInternalFrame implements InterfaceUsua
 	 * 
 	 */
 	public IntUsuarioAlteracao(ActionListener ctrlListener, Usuario usuario) {
-		super("AlteraÁ„o de Usu·rio", false, true);
+		super("Altera√ß√£o de Usu√°rio", false, true);
 		
 		this.ctrlListener = ctrlListener;
 		this.usuario = usuario;

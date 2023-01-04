@@ -72,7 +72,7 @@ public class IntUsuarioInclusao extends JInternalFrame implements InterfaceUsuar
 	 * 
 	 */
 	public IntUsuarioInclusao(ActionListener ctrlListener) {
-		super("Inclus„o de Usu·rio", false, true);
+		super("Inclus√£o de Usu√°rio", false, true);
 		
 		this.ctrlListener = ctrlListener;
 		initialize();

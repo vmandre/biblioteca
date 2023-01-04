@@ -18,25 +18,25 @@ public class CtrlExcluirUsuario {
 	
 	public void excluirUsuario(Usuario usuario) throws ClassNotFoundException, SQLException {
 
-		//Valida se o usu�rio n�o tem obra emprestrada para que possa ser excluido
+		//Valida se o usuário não tem obra emprestrada para que possa ser excluido
 		Emprestimo emprestimo = new Emprestimo();
 		Multa multa = new Multa();
 
 		if (usuario.getStatus().equals("I"))
-			throw new SQLException("Usu�rio j� est� desativado!");
+			throw new SQLException("Usuário já está desativado!");
 
 		if (emprestimo.getEmprestimosAbertoByUsuario(usuario.getId()).size() == 0) {
 			
 			if (multa.getMultasByUsuario(usuario.getId()).size() > 0) {
-				throw new SQLException("Usu�rio possui multa(s) pendente(s). N�o � poss�vel desativ�-lo!");	
+				throw new SQLException("Usuário possui multa(s) pendente(s). Não é possível desativá-lo!");	
 			} else {
-				//Desativar o usu�rio
+				//Desativar o usuário
 				//usuario.excluir();
 				usuario.desativar();
 			}
 
 		} else {
-			throw new SQLException("Usu�rio possui obras emprestadas. N�o � poss�vel desativ�-lo!");
+			throw new SQLException("Usuário possui obras emprestadas. Não é possível desativá-lo!");
 		}
 	}
 }

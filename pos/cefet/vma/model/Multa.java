@@ -28,7 +28,7 @@ public class Multa {
 	private int idUsuario;
 	private Date dataPagamento;
 	private double valor;
-	private char motivo; // Valores possíveis {A - Atraso e E - Extravio}
+	private char motivo; // Valores possÃ­veis {A - Atraso e E - Extravio}
 	private int diasAtraso;
 	private long idMulta;
 	
@@ -37,7 +37,7 @@ public class Multa {
 
 	/**
 	 * Construtor da classe
-	 * @param emprestimo Dados do empréstimo
+	 * @param emprestimo Dados do emprÃ©stimo
 	 * @param diasAtraso Se o motivo da multa for por extravio, passar 0 (zero)
 	 */
 	public Multa(Emprestimo emprestimo, int diasAtraso){

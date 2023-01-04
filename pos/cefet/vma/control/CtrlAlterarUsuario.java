@@ -39,7 +39,7 @@ public class CtrlAlterarUsuario implements ActionListener {
 		return new IntBibliotecaria().mostrarJanela(alteracao);
 	}
 
-	/* (n�o-Javadoc)
+	/* (não-Javadoc)
 	 * @see java.awt.event.ActionListener#actionPerformed(java.awt.event.ActionEvent)
 	 */
 	public void actionPerformed(ActionEvent e) {
@@ -54,7 +54,7 @@ public class CtrlAlterarUsuario implements ActionListener {
 			try {
 				usuarioAlteracao.alterar();
 				usuarioAlteracao.getEndereco().alterar();				
-				BIBMessage.showInfo("Usu�rio alterado com sucesso!");
+				BIBMessage.showInfo("Usuásrio alterado com sucesso!");
 								
 			} catch (ClassNotFoundException e1) {
 				BIBMessage.showError(e1);

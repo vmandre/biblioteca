@@ -38,7 +38,7 @@ public class IntDevolucao extends JInternalFrame {
 	 * 
 	 */
 	public IntDevolucao(ActionListener ctrlListener) {
-		super("Devolu��o de Obra", false, true);
+		super("Devolução de Obra", false, true);
 		
 		this.ctrlListener = ctrlListener;
 		initialize();
@@ -96,7 +96,7 @@ public class IntDevolucao extends JInternalFrame {
 		if(lblCodigo == null) {
 			lblCodigo = new JLabel();
 			lblCodigo.setSize(100, 20);
-			lblCodigo.setText("C�digo da Obra :");
+			lblCodigo.setText("Código da Obra :");
 			lblCodigo.setLocation(15, 15);
 		}
 		return lblCodigo;
@@ -110,7 +110,7 @@ public class IntDevolucao extends JInternalFrame {
 		if(lblDtEmprestimo == null) {
 			lblDtEmprestimo = new JLabel();
 			lblDtEmprestimo.setSize(129, 20);
-			lblDtEmprestimo.setText("Data do Devolu��o :");
+			lblDtEmprestimo.setText("Data do Devolução :");
 			lblDtEmprestimo.setLocation(324, 15);
 		}
 		return lblDtEmprestimo;
@@ -157,7 +157,7 @@ public class IntDevolucao extends JInternalFrame {
 		if(btDevolver == null) {
 			btDevolver = new JButton();
 			btDevolver.setBounds(244, 88, 155, 36);
-			btDevolver.setText("Registrar Devolu��o");
+			btDevolver.setText("Registrar Devolução");
 			btDevolver.addActionListener(ctrlListener);
 		}
 		return btDevolver;

@@ -93,12 +93,12 @@ public class Usuario {
 		int id;
 		try {
 			id = Integer.parseInt(interfaceUsuario.getTxtMatricula().getText());
-		}catch(NumberFormatException nfe){return "Matr�cula inv�lida!";}
+		}catch(NumberFormatException nfe){return "Matrícula inválida!";}
 
 		long cpf;
 		try {
 			cpf = Long.parseLong(interfaceUsuario.getTxtCPF().getText());
-		}catch(NumberFormatException nfe){return "CPF  inv�lido!";}
+		}catch(NumberFormatException nfe){return "CPF  inválido!";}
 		
 		String nome = interfaceUsuario.getTxtNome().getText();
 		if (nome.equals("")) return "O nome deve ser preenchido!";
@@ -109,10 +109,10 @@ public class Usuario {
 		if (senha2.equals("")) return "O campo confirmar senha deve ser preenchido!";
 
 		if (! senha1.equals(senha2))
-			return "Senhas n�o conferem!";
+			return "Senhas não conferem!";
 		
 		if (interfaceUsuario.getTxtDataNasc().getText().equals("")) return "Data de nascimento deve ser preenchida!";
-		if (interfaceUsuario.getTxtDataNasc().getText().indexOf("/") == -1) return "Data com formato inv�lido! \nDeve ser preenchida no formato dd/mm/aaaa";
+		if (interfaceUsuario.getTxtDataNasc().getText().indexOf("/") == -1) return "Data com formato inválido! \nDeve ser preenchida no formato dd/mm/aaaa";
 		Calendar calendar = Calendar.getInstance();
 		String dia = "";
 		String mes = "";
@@ -122,7 +122,7 @@ public class Usuario {
 			mes = interfaceUsuario.getTxtDataNasc().getText().substring(3, 5);
 			ano = interfaceUsuario.getTxtDataNasc().getText().substring(6);
 		} catch (RuntimeException e) {
-			return "Data com formato inv�lido!";
+			return "Data com formato inválido!";
 		}
 		calendar.set(Calendar.DAY_OF_MONTH, Integer.parseInt(dia));
 		calendar.set(Calendar.MONTH, Integer.parseInt(mes)-1);
@@ -137,7 +137,7 @@ public class Usuario {
 		dataNasc.set(Calendar.SECOND, 0);
 		
 		Date dataAtual = Calendar.getInstance().getTime();		
-		if (dataAtual.before(calendar.getTime())) {return "Data de nascimento inv�lida!";}
+		if (dataAtual.before(calendar.getTime())) {return "Data de nascimento inválida!";}
 		
 		String logradouro = interfaceUsuario.getTxtLogradouro().getText();
 		int numero;
@@ -150,7 +150,7 @@ public class Usuario {
 		
 		String email = interfaceUsuario.getTxtEmail().getText();
 		if (email.indexOf('@') == -1 || email.indexOf('.') == -1) {
-			return "Formato do e-mail inv�lido!";
+			return "Formato do e-mail inválido!";
 		}
 		
 		String cidade = interfaceUsuario.getTxtCidade().getText();
@@ -162,35 +162,35 @@ public class Usuario {
 
 		try {
 			numCep = Integer.parseInt(cep);
-		}catch(NumberFormatException nfe){return "CEP inv�lido!";}
+		}catch(NumberFormatException nfe){return "CEP inválido!";}
 		
 		String ddd = interfaceUsuario.getTxtDDD().getText();
 		int numDDD;
 		if (ddd.equals("")) numDDD = 0;
 		try {
 			numDDD = Integer.parseInt(ddd);
-		}catch(NumberFormatException nfe){return "DDD inv�lido!";}
+		}catch(NumberFormatException nfe){return "DDD inválido!";}
 		
 		String telCont = interfaceUsuario.getTxtTelCont().getText();
 		int numTelCont;
 		if (telCont.equals("")) numTelCont = 0;
 		try {
 			numTelCont = Integer.parseInt(telCont);
-		}catch(NumberFormatException nfe){return "Telefone p/ contato inv�lido!";}
+		}catch(NumberFormatException nfe){return "Telefone p/ contato inválido!";}
 		
 		String telCel = interfaceUsuario.getTxtTelCel().getText();
 		int numTelCel;
 		if (telCel.equals("")) numTelCel = 0;
 		try {
 			numTelCel = Integer.parseInt(telCel);
-		}catch(NumberFormatException nfe){return "Telefone celular inv�lido!";}
+		}catch(NumberFormatException nfe){return "Telefone celular inválido!";}
 		
 		String telCom = interfaceUsuario.getTxtTelCom().getText();
 		int numTelCom;
 		if (telCom.equals("")) numTelCom = 0;
 		try {
 			numTelCom = Integer.parseInt(telCom);
-		}catch(NumberFormatException nfe){return "Telefone comercial inv�lido!";}
+		}catch(NumberFormatException nfe){return "Telefone comercial inválido!";}
 		
 		String status2;
 		if (interfaceUsuario.getJChkAtivo().isSelected()){
@@ -274,7 +274,7 @@ public class Usuario {
 	public void excluir() throws ClassNotFoundException, SQLException {
 		postgreSQL = new IntPostgreSQL();
 		
-		//Se existir um endere�o cadastrado para o usu�rio, ser� exclu�do da Base de Dados.
+		//Se existir um endereço cadastrado para o usuário, será excluído da Base de Dados.
 //		Endereco endereco = new Endereco();
 //		if (endereco.getEnderecoByUsuario(this.getId()) != null) {
 //			endereco.setIdUsuario(this.getId());

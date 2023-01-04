@@ -26,7 +26,7 @@ public class CtrlIncluirUsuario implements ActionListener {
 		return new IntBibliotecaria().mostrarJanela(inclusao);
 	}
 
-	/* (n�o-Javadoc)
+	/* (não-Javadoc)
 	 * @see java.awt.event.ActionListener#actionPerformed(java.awt.event.ActionEvent)
 	 */
 	public void actionPerformed(ActionEvent e) {
@@ -42,7 +42,7 @@ public class CtrlIncluirUsuario implements ActionListener {
 				usuarioInclusao.inserir();
 				usuarioInclusao.getEndereco().inserir();
 				
-				BIBMessage.showInfo("Usu�rio inserido com sucesso!");
+				BIBMessage.showInfo("Usuário inserido com sucesso!");
 				
 			} catch (ClassNotFoundException e1) {
 				BIBMessage.showError(e1.getMessage());

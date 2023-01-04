@@ -150,7 +150,7 @@ public class CtrlBiblioteca extends JFrame {
 				}});
 			jMenuObra.add(itemConsultarObra);
 			
-			// A op��o de alterar, desativar e excluir s� ser� acessada ap�s consulta da obra
+			// A opção de alterar, desativar e excluir só será acessada após consulta da obra
 //			jMenuObra.add(new JMenuItem("Alterar"));
 //			jMenuObra.add(new JMenuItem("Desativar"));
 //			jMenuObra.add(new JMenuItem("Excluir"));

@@ -43,7 +43,7 @@ public class CtrlAlterarObra implements ActionListener {
 		return new IntBibliotecaria().mostrarJanela(alteracao);
 	}
 
-	/* (n�o-Javadoc)
+	/* (não-Javadoc)
 	 * @see java.awt.event.ActionListener#actionPerformed(java.awt.event.ActionEvent)
 	 */
 	public void actionPerformed(ActionEvent e) {
@@ -52,7 +52,7 @@ public class CtrlAlterarObra implements ActionListener {
 
 			if (obra.getDataDesativacao() != null) {
 				BIBMessage.showError(
-					"Esta obra j� est� desativada e n�o pode ser alterada!");
+					"Esta obra já está desativada e não pode ser alterada!");
 			} else {
 				Object object = Obra.validarDadosObra(alteracao);
 				if (object instanceof String) {
@@ -62,7 +62,7 @@ public class CtrlAlterarObra implements ActionListener {
 				} else {
 					Obra obraAlteracao = (Obra) object;
 
-					//Recupera os valores selecionados pelo usu�rio na tela
+					//Recupera os valores selecionados pelo usuário na tela
 					obraAlteracao.setMotivoDesativacao(
 						this.alteracao.getJCboDesativavao().getSelectedIndex());
 					obraAlteracao.setGenero(
@@ -70,10 +70,10 @@ public class CtrlAlterarObra implements ActionListener {
 
 					try {
 
-						//Se o motivo da desativa��o da obra for Extravio, ser� gerada a multa para o usu�rio
+						//Se o motivo da desativação da obra for Extravio, será gerada a multa para o usuário
 						if (obraAlteracao.getMotivoDesativacao() == BIBConstants.CODIGO_EXTRAVIO) {
 							BIBMessage.showWarning(
-								"A desativa��o desta obra por Extravio ir� gerar a multa para o usu�rio \n" +								"que a emprestou caso haja um empr�stimo registrado para a obra!");							 
+								"A desativação desta obra por Extravio irá gerar a multa para o usuário \n" +								"que a emprestou caso haja um empréstimo registrado para a obra!");							 
 
 							Emprestimo emprestimo = new Emprestimo();
 							Emprestimo emprestimo2 = emprestimo.getEmprestimoAberto(obraAlteracao.getId());

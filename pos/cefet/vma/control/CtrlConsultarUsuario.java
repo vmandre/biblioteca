@@ -60,7 +60,7 @@ public class CtrlConsultarUsuario implements ActionListener {
 		ctrlBiblioteca.getContentPane().add(fResult).setVisible(true);		
 	}
 
-	/* (n�o-Javadoc)
+	/* (não-Javadoc)
 	 * @see java.awt.event.ActionListener#actionPerformed(java.awt.event.ActionEvent)
 	 */
 	public void actionPerformed(ActionEvent e) {
@@ -72,7 +72,7 @@ public class CtrlConsultarUsuario implements ActionListener {
 				.getActionCommand()
 				.equals("Alterar")) {
 
-				//Recupera o valor da matr�cula para realizar a pesquisa para a tela de altera��o
+				//Recupera o valor da matrícula para realizar a pesquisa para a tela de alteração
 				matricula = userConsultaResultado.getTxtMatricula().getText();
 
 				Usuario usuario = new Usuario();
@@ -87,9 +87,9 @@ public class CtrlConsultarUsuario implements ActionListener {
 						new CtrlAlterarUsuario(usuario2).exibirTelaAlteracao());
 				} else {
 					BIBMessage.showError(
-						"Ocorreu erro na pesquisa do usu�rio "
+						"Ocorreu erro na pesquisa do usuário "
 							+ matricula
-							+ " para altera��o!");
+							+ " para alteração!");
 				}
 
 			}
@@ -101,9 +101,9 @@ public class CtrlConsultarUsuario implements ActionListener {
 				//int retorno = BIBMessage.showExcludeQuestion();
 				int retorno = BIBMessage.showDesativationQuestion();
 
-				//Usu�rio selecionou exclus�o
+				//Usuário selecionou exclusão
 				if (retorno == 0) {
-					//Recupera o valor da matr�cula para realizar a pesquisa para a tela de altera��o
+					//Recupera o valor da matrícula para realizar a pesquisa para a tela de alteração
 					matricula =
 						userConsultaResultado.getTxtMatricula().getText();
 					Usuario usuario = new Usuario();
@@ -114,13 +114,13 @@ public class CtrlConsultarUsuario implements ActionListener {
 					} else {
 						usuario.setStatus("I");
 					}
-					//Passa o usu�rio para o Control excluir
+					//Passa o usuário para o Control excluir
 					CtrlExcluirUsuario ctrlExcluirUsuario =
 						new CtrlExcluirUsuario();
 					ctrlExcluirUsuario.excluirUsuario(usuario);
 
-					//BIBMessage.showInfo("Usu�rio exclu�do com sucesso!");
-					BIBMessage.showInfo("Usu�rio desativado com sucesso!");
+					//BIBMessage.showInfo("Usuário excluído com sucesso!");
+					BIBMessage.showInfo("Usuário desativado com sucesso!");
 					this.userConsulta.dispose();
 					this.userConsultaResultado.dispose();
 					this.userConsulta.repaint();
@@ -132,7 +132,7 @@ public class CtrlConsultarUsuario implements ActionListener {
 			if (((JButton) e.getSource())
 				.getActionCommand()
 				.equals("Consultar")) {
-				//Valida��o do preenchimento dos campos	
+				//Validação do preenchimento dos campos	
 				if (!matricula.equals("") && !cpf.equals("")) {
 					//Dois campos preenchidos
 					BIBMessage.showError(
@@ -147,7 +147,7 @@ public class CtrlConsultarUsuario implements ActionListener {
 						try {
 							idUser = Integer.parseInt(matricula);
 						} catch (NumberFormatException nfe) {
-							BIBMessage.showError("Matr�cula inv�lida!");
+							BIBMessage.showError("Matrícula inválida!");
 						}
 					}
 
@@ -156,18 +156,18 @@ public class CtrlConsultarUsuario implements ActionListener {
 						try {
 							cpfUser = Long.parseLong(cpf);
 						} catch (NumberFormatException nfe) {
-							BIBMessage.showError("CPF inv�lido!");
+							BIBMessage.showError("CPF inválido!");
 						}
 					}
 
 					Usuario usuario = new Usuario();
 					Endereco endereco = new Endereco();
 
-					//Pesquisa usu�rio pelo CPF
+					//Pesquisa usuário pelo CPF
 					if (cpfUser != 0) {
 						Usuario usuario2 = usuario.getUsuarioByCpf(cpfUser);
 						if (usuario2 == null) {
-							BIBMessage.showError("Usu�rio n�o encontrado!");
+							BIBMessage.showError("Usuário não encontrado!");
 						} else {
 							usuario2.setEndereco(
 								endereco.getEnderecoByUsuario(
@@ -187,11 +187,11 @@ public class CtrlConsultarUsuario implements ActionListener {
 
 						}
 					}
-					//Pesquisa usu�rio pela matr�cula
+					//Pesquisa usuário pela matrícula
 					if (idUser != 0) {
 						Usuario usuario2 = usuario.getUsuarioById(idUser);
 						if (usuario2 == null) {
-							BIBMessage.showError("Usu�rio n�o encontrado!");
+							BIBMessage.showError("Usuário não encontrado!");
 						} else {
 							usuario2.setEndereco(
 								endereco.getEnderecoByUsuario(

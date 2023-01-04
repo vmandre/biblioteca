@@ -17,7 +17,6 @@ import javax.swing.JTextField;
  * @author Vanderlei Matos Andre
  *
  */
-//public class IntUsuario extends JInternalFrame {
 public class IntUsuario {
 
 	private JInternalFrame frmAutenticacao;
@@ -40,7 +39,7 @@ public class IntUsuario {
 	}
 
 	public JInternalFrame mostrarJanelaAutenticacao() {
-		frmAutenticacao = new JInternalFrame("Autenticação", false, true);
+		frmAutenticacao = new JInternalFrame("AutenticaÃ§Ã£o", false, true);
 		frmAutenticacao.setDefaultCloseOperation(JInternalFrame.DISPOSE_ON_CLOSE);
 		frmAutenticacao.setSize(250, 150);
 		frmAutenticacao.setLocation(250, 150);

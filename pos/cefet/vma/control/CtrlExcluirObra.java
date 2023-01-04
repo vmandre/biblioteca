@@ -17,7 +17,7 @@ public class CtrlExcluirObra {
 	
 	public void excluirObra(Obra obra) throws ClassNotFoundException, SQLException {
 
-		//Valida se a obra est· desativada para que possa ser excluida
+		//Valida se a obra est√° desativada para que possa ser excluida
 		Emprestimo emprestimo = new Emprestimo();
 		
 		Obra obraExcluir = obra.getObraById(obra.getId());
@@ -27,7 +27,7 @@ public class CtrlExcluirObra {
 			obraExcluir.excluir();
 
 		} else {
-			throw new SQLException("Esta obra somente pode ser excluÌda se estiver desativada!");
+			throw new SQLException("Esta obra somente pode ser exclu√≠da se estiver desativada!");
 		}
 	}
 }

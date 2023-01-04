@@ -39,7 +39,7 @@ public class IntEmprestimo extends JInternalFrame {
 	 * 
 	 */
 	public IntEmprestimo(ActionListener ctrlListener) {
-		super("Empr�stimo de Obra", false, true);
+		super("Empréstimo de Obra", false, true);
 		
 		this.ctrlListener = ctrlListener;
 		initialize();
@@ -99,7 +99,7 @@ public class IntEmprestimo extends JInternalFrame {
 		if(lblCodigo == null) {
 			lblCodigo = new JLabel();
 			lblCodigo.setSize(100, 20);
-			lblCodigo.setText("C�digo da Obra :");
+			lblCodigo.setText("Código da Obra :");
 			lblCodigo.setLocation(15, 46);
 		}
 		return lblCodigo;
@@ -113,7 +113,7 @@ public class IntEmprestimo extends JInternalFrame {
 		if(lblMatricula == null) {
 			lblMatricula = new JLabel();
 			lblMatricula.setSize(100, 20);
-			lblMatricula.setText("Matr. do Usu�rio :");
+			lblMatricula.setText("Matr. do Usuário :");
 			lblMatricula.setLocation(15, 15);
 		}
 		return lblMatricula;
@@ -127,7 +127,7 @@ public class IntEmprestimo extends JInternalFrame {
 		if(lblDtEmprestimo == null) {
 			lblDtEmprestimo = new JLabel();
 			lblDtEmprestimo.setSize(129, 20);
-			lblDtEmprestimo.setText("Data do Empr�stimo :");
+			lblDtEmprestimo.setText("Data do Empréstimo :");
 			lblDtEmprestimo.setLocation(324, 46);
 		}
 		return lblDtEmprestimo;
@@ -186,7 +186,7 @@ public class IntEmprestimo extends JInternalFrame {
 		if(btIncluir == null) {
 			btIncluir = new JButton();
 			btIncluir.setBounds(245, 114, 155, 36);
-			btIncluir.setText("Solicitar Empr�stimo");
+			btIncluir.setText("Solicitar Empréstimo");
 			btIncluir.addActionListener(ctrlListener);
 		}
 		return btIncluir;

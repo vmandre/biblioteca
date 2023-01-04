@@ -129,7 +129,7 @@ public class MultaArquivoReciboPagamento extends JFrame implements BIBConstants 
 		if(jLabel1 == null) {
 			jLabel1 = new JLabel();
 			jLabel1.setBounds(545, 12, 58, 20);
-			jLabel1.setText("Emiss„o : ");
+			jLabel1.setText("Emiss√£o : ");
 		}
 		return jLabel1;
 	}
@@ -154,7 +154,7 @@ public class MultaArquivoReciboPagamento extends JFrame implements BIBConstants 
 		if(lblUsuario == null) {
 			lblUsuario = new JLabel();
 			lblUsuario.setBounds(9, 53, 72, 20);
-			lblUsuario.setText("Usu·rio");
+			lblUsuario.setText("Usu√°rio");
 		}
 		return lblUsuario;
 	}
@@ -241,7 +241,7 @@ public class MultaArquivoReciboPagamento extends JFrame implements BIBConstants 
 //		if(lblObservacao == null) {
 //			lblObservacao = new JLabel();
 //			lblObservacao.setBounds(14, 280, 90, 20);
-//			lblObservacao.setText("ObservaÁ„o : ");
+//			lblObservacao.setText("Observa√ß√£o : ");
 //		}
 //		return lblObservacao;
 //	}
@@ -370,7 +370,7 @@ public class MultaArquivoReciboPagamento extends JFrame implements BIBConstants 
 		if(jLabel3 == null) {
 			jLabel3 = new javax.swing.JLabel();
 			jLabel3.setBounds(12, 140, 360, 29);
-			jLabel3.setText("V·lido somente com o carimbo e assinatura da bibliotec·ria");
+			jLabel3.setText("V√°lido somente com o carimbo e assinatura da bibliotec√°ria");
 		}
 		return jLabel3;
 	}

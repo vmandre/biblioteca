@@ -129,7 +129,7 @@ public class MultaArquivo extends JFrame implements BIBConstants {
 		if(jLabel1 == null) {
 			jLabel1 = new JLabel();
 			jLabel1.setBounds(545, 12, 58, 20);
-			jLabel1.setText("Emiss„o : ");
+			jLabel1.setText("Emiss√£o : ");
 		}
 		return jLabel1;
 	}
@@ -154,7 +154,7 @@ public class MultaArquivo extends JFrame implements BIBConstants {
 		if(lblUsuario == null) {
 			lblUsuario = new JLabel();
 			lblUsuario.setBounds(14, 120, 72, 20);
-			lblUsuario.setText("Usu·rio");
+			lblUsuario.setText("Usu√°rio");
 		}
 		return lblUsuario;
 	}
@@ -241,7 +241,7 @@ public class MultaArquivo extends JFrame implements BIBConstants {
 		if(lblObservacao == null) {
 			lblObservacao = new JLabel();
 			lblObservacao.setBounds(14, 280, 90, 20);
-			lblObservacao.setText("ObservaÁ„o : ");
+			lblObservacao.setText("Observa√ß√£o : ");
 		}
 		return lblObservacao;
 	}
@@ -296,7 +296,7 @@ public class MultaArquivo extends JFrame implements BIBConstants {
 		if(lblAutenticacao == null) {
 			lblAutenticacao = new JLabel();
 			lblAutenticacao.setBounds(3, 0, 113, 21);
-			lblAutenticacao.setText("AutenticaÁ„o");
+			lblAutenticacao.setText("Autentica√ß√£o");
 		}
 		return lblAutenticacao;
 	}

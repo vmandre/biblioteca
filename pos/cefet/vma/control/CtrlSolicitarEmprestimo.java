@@ -27,7 +27,7 @@ public class CtrlSolicitarEmprestimo implements ActionListener {
 		return new IntBibliotecaria().mostrarJanela(emprestimo);
 	}
 
-	/* (n�o-Javadoc)
+	/* (não-Javadoc)
 	 * @see java.awt.event.ActionListener#actionPerformed(java.awt.event.ActionEvent)
 	 */
 	public void actionPerformed(ActionEvent e) {
@@ -47,7 +47,7 @@ public class CtrlSolicitarEmprestimo implements ActionListener {
 						Integer.parseInt(matricula),
 						Integer.parseInt(codigo));
 			} catch (NumberFormatException e1) {
-				msgRetConsulta = "Matr�cula ou c�digo da Obra inv�lidos!";
+				msgRetConsulta = "Matrícula ou código da Obra inválidos!";
 			} catch (ClassNotFoundException e1) {
 				msgRetConsulta = e1.toString();
 			} catch (SQLException e1) {
@@ -63,10 +63,10 @@ public class CtrlSolicitarEmprestimo implements ActionListener {
 					ctrlRegistrarEmprestimo.registrarEmprestimo(
 						Integer.parseInt(matricula),
 						Integer.parseInt(codigo));
-					BIBMessage.showInfo("Empr�stimo realizado com sucesso!");					
+					BIBMessage.showInfo("Empréstimo realizado com sucesso!");					
 				} catch (NumberFormatException e2) {
 					BIBMessage.showError(
-						"Matr�cula ou c�digo da Obra inv�lidos!");
+						"Matrícula ou código da Obra inválidos!");
 				} catch (ClassNotFoundException e2) {
 					BIBMessage.showError(e2.getMessage());
 				} catch (SQLException e2) {
@@ -79,10 +79,10 @@ public class CtrlSolicitarEmprestimo implements ActionListener {
 	private boolean validarCampos(String matricula, String codigo) {		
 
 		if (matricula.equals("")) {	
-			BIBMessage.showError("Preencha o campo Matr�cula do Usu�rio!");
+			BIBMessage.showError("Preencha o campo Matrícula do Usuário!");
 			return false;
 		} else if (codigo.equals("")) {
-			BIBMessage.showError("Preencha o campo C�digo da Obra!");
+			BIBMessage.showError("Preencha o campo Código da Obra!");
 			return false;
 		}
 			
@@ -90,7 +90,7 @@ public class CtrlSolicitarEmprestimo implements ActionListener {
 		try {
 			matrUsuario = Integer.parseInt(matricula);	
 		} catch (NumberFormatException nfe) {
-			BIBMessage.showError("A Matr�cula do Usu�rio deve ser somente n�meros!");
+			BIBMessage.showError("A Matrícula do Usuário deve ser somente números!");
 			return false;
 		}
 
@@ -98,7 +98,7 @@ public class CtrlSolicitarEmprestimo implements ActionListener {
 		try {
 			codObra = Integer.parseInt(codigo);	
 		} catch (NumberFormatException nfe) {
-			BIBMessage.showError("O c�digo da Obra deve ser somente n�meros!");
+			BIBMessage.showError("O código da Obra deve ser somente números!");
 			return false;
 		}		
 		return true;

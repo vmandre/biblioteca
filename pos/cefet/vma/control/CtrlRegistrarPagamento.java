@@ -33,7 +33,7 @@ public class CtrlRegistrarPagamento implements ActionListener {
 		return new IntBibliotecaria().mostrarJanela(multaPagamento);
 	}
 
-	/* (n�o-Javadoc)
+	/* (não-Javadoc)
 	 * @see java.awt.event.ActionListener#actionPerformed(java.awt.event.ActionEvent)
 	 */
 	public void actionPerformed(ActionEvent e) {
@@ -42,7 +42,7 @@ public class CtrlRegistrarPagamento implements ActionListener {
 			long idMulta = 0;
 			try {
 				idMulta = Long.parseLong(this.multaPagamento.getJTxtIdMulta().getText());
-			}catch(NumberFormatException nfe){BIBMessage.showError("ID inv�lido!");}
+			}catch(NumberFormatException nfe){BIBMessage.showError("ID inválido!");}
 						
 			if (idMulta != 0) {
 				try {
@@ -51,7 +51,7 @@ public class CtrlRegistrarPagamento implements ActionListener {
 					Multa multa2 = multa.getMultaById(idMulta);
 					
 					if (multa2 == null) {
-						throw new SQLException("O ID n�o foi encontrado!\nVerifique se digitou corretamente!");
+						throw new SQLException("O ID não foi encontrado!\nVerifique se digitou corretamente!");
 					} else {
 						multa2.registrarPagamento();
 						BIBMessage.showInfo(
